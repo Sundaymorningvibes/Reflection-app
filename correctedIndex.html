@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Reflection</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f4f4f5;
+            color: #27272a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 { font-size: 1.25rem; margin-bottom: 1rem; color: #52525b; }
+        p { font-size: 1.1rem; line-height: 1.5; margin-bottom: 2rem; min-height: 60px; }
+        button {
+            background-color: #18181b;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover { background-color: #3f3f46; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Daily Reflection Prompt</h1>
+        <p id="prompt">Click the button below to generate a thought-provoking prompt for today.</p>
+        <button onclick="generatePrompt()">New Prompt</button>
+    </div>
+
+    <script>
+        const prompts = [
+            "What is one small assumption you challenged today?",
+            "Describe a complex problem you faced recently and how you broke it down.",
+            "What is something new you learned this week that shifted your perspective?",
+            "How do your daily habits align with your long-term goals?",
+            "What is a pattern or routine in your life that you'd like to optimize?"
+        ];
+
+        function generatePrompt() {
+            const randomIndex = Math.floor(Math.random() * prompts.length);
+            document.getElementById("prompt").innerText = prompts[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
